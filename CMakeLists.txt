@@ -209,6 +209,7 @@ if(BUILD_GSTREAMER_PLUGIN)
   pkg_check_modules(GST_APP REQUIRED gstreamer-app-1.0)
   include_directories(${GST_APP_INCLUDE_DIRS})
   link_directories(${GST_APP_LIBRARY_DIRS})
+  add_definitions(-DGST_DISABLE_GST_DEBUG)
 
   if(BUILD_STATIC)
     add_library(gstkvssink STATIC ${GST_PLUGIN_SOURCE_FILES})
